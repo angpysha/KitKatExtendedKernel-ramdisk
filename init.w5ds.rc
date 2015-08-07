@@ -17,6 +17,9 @@ on init
 # End Immersion changes
 
 on fs
+    chown 0777 /sbin/busybox
+    chown 0777 /sbin/mount_f2fs/mount_sys_data.sh
+    exec /sbin/mount_f2fs/mount_sys_data.sh
     mount_all fstab.w5ds
     
     # Executing tune2fs to reserve some region in /data. (40MB)
